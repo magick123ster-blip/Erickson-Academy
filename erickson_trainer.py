@@ -81,15 +81,22 @@ st.markdown("""
         background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
     }
 
+    /* Adjust main content padding and width */
+    .block-container {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+        max-width: 1200px !important;
+    }
+
     /* Clean white sidebar */
     section[data-testid="stSidebar"] {
         background-color: #ffffff !important;
         border-right: 1px solid var(--border);
     }
 
-    /* Custom Chat Input */
+    /* Custom Chat Input - Fixed position fix */
     .stChatInputContainer {
-        padding-bottom: 20px;
+        padding-bottom: 10px !important;
     }
 
     /* Buttons */
@@ -119,13 +126,14 @@ st.markdown("""
         color: var(--text-main) !important;
     }
 
-    /* Chat Messages */
+    /* Chat Messages - Compact design */
     [data-testid="stChatMessage"] {
         background-color: #ffffff !important;
         border: 1px solid var(--border);
-        border-radius: 15px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        margin-bottom: 10px;
+        border-radius: 12px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        margin-bottom: 8px;
+        padding: 1rem !important;
     }
 
     /* Headings */
