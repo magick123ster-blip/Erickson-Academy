@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+env/
+venv/
+.env
+
+# Streamlit
+.streamlit/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Vector DB backups or logs
+*.log
+erickson_vector_db_v2/
+erickson_vector_db/erickson_vector_db/
