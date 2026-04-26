@@ -21,31 +21,34 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# 2. Custom CSS for Premium Look
+# 2. Custom CSS for Premium Light Look
 st.markdown("""
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
 
     :root {
-        --primary: #6366f1;
-        --primary-hover: #4f46e5;
-        --bg-dark: #0f172a;
-        --card-bg: rgba(30, 41, 59, 0.7);
-        --glass-border: rgba(255, 255, 255, 0.1);
+        --primary: #4f46e5;
+        --primary-hover: #4338ca;
+        --bg-light: #f8fafc;
+        --card-bg: #ffffff;
+        --border: #e2e8f0;
+        --text-main: #1e293b;
     }
 
     html, body, [class*="css"] {
         font-family: 'Outfit', sans-serif;
+        color: var(--text-main);
     }
 
+    /* Light background gradient */
     .stApp {
-        background: radial-gradient(circle at top right, #1e1b4b, #0f172a);
+        background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
     }
 
-    /* Glassmorphism sidebar */
+    /* Clean white sidebar */
     section[data-testid="stSidebar"] {
-        background-color: rgba(15, 23, 42, 0.95) !important;
-        border-right: 1px solid var(--glass-border);
+        background-color: #ffffff !important;
+        border-right: 1px solid var(--border);
     }
 
     /* Custom Chat Input */
@@ -55,50 +58,57 @@ st.markdown("""
 
     /* Buttons */
     .stButton>button {
-        background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+        background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
         color: white;
         border: none;
         border-radius: 8px;
         padding: 0.6rem 1.2rem;
         font-weight: 600;
         transition: all 0.3s ease;
-        box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+        box-shadow: 0 4px 10px rgba(79, 70, 229, 0.2);
     }
 
     .stButton>button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+        transform: translateY(-1px);
+        box-shadow: 0 6px 15px rgba(79, 70, 229, 0.3);
         border: none;
         color: white;
     }
 
-    /* Cards/Expanders */
+    /* Expanders */
     .streamlit-expanderHeader {
-        background-color: var(--card-bg) !important;
-        border: 1px solid var(--glass-border) !important;
+        background-color: #ffffff !important;
+        border: 1px solid var(--border) !important;
         border-radius: 10px !important;
+        color: var(--text-main) !important;
     }
 
-    /* Status Info */
-    .stAlert {
-        background-color: rgba(30, 41, 59, 0.5) !important;
-        border: 1px solid var(--glass-border) !important;
-        color: #e2e8f0 !important;
+    /* Chat Messages */
+    [data-testid="stChatMessage"] {
+        background-color: #ffffff !important;
+        border: 1px solid var(--border);
+        border-radius: 15px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        margin-bottom: 10px;
     }
 
     /* Headings */
     h1, h2, h3 {
-        background: linear-gradient(to right, #fff, #94a3b8);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        color: #1e1b4b !important;
         font-weight: 600;
     }
 
     /* Tables */
     .stTable {
-        background-color: var(--card-bg);
+        background-color: #ffffff;
         border-radius: 10px;
+        border: 1px solid var(--border);
         overflow: hidden;
+    }
+    
+    /* Text in sidebar */
+    section[data-testid="stSidebar"] .stMarkdown p {
+        color: #475569 !important;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -177,7 +187,7 @@ def get_training_examples():
     ]
 
 # 6. Sidebar UI
-st.sidebar.markdown("<h1 style='text-align: center; color: white;'>🎓 Erickson Academy</h1>", unsafe_allow_html=True)
+st.sidebar.markdown("<h1 style='text-align: center; color: #1e1b4b;'>🎓 Erickson Academy</h1>", unsafe_allow_html=True)
 st.sidebar.markdown("---")
 
 with st.sidebar.expander("👤 훈련 페르소나 설정", expanded=False):
@@ -255,8 +265,8 @@ TRAINER_PROMPT = f"""
 """
 
 # 8. Main UI
-st.markdown("<h1 style='text-align: center;'>🎓 Erickson Portable Academy</h1>", unsafe_allow_html=True)
-st.markdown("<p style='text-align: center; color: #94a3b8;'>Mastering the Art of Hypnotic Communication</p>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: #1e1b4b;'>🎓 Erickson Portable Academy</h1>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; color: #475569;'>Mastering the Art of Hypnotic Communication</p>", unsafe_allow_html=True)
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
