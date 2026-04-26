@@ -228,7 +228,7 @@ if st.sidebar.button("🚀 새 훈련 시작"):
 
 st.sidebar.markdown("---")
 api_key = st.sidebar.text_input("Google API Key", type="password", placeholder="AI Studio에서 발급받은 키")
-model_name = st.sidebar.selectbox("모델 선택", ["gemini-1.5-pro", "gemini-1.5-flash", "gemini-2.0-flash-exp"])
+model_name = st.sidebar.selectbox("모델 선택", ["gemini-3.1-pro-preview", "gemini-3-flash-preview", "gemma-4-31b-it"])
 
 # 7. Master System Prompt
 MASTER_DNA = """
