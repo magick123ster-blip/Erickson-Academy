@@ -5,3 +5,5 @@ sentence-transformers
 langextract
 pydantic
 typing-extensions
+torch
+torchvision
